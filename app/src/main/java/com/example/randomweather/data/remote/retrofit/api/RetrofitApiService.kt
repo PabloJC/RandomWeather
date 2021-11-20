@@ -10,6 +10,7 @@ interface RetrofitApiService {
     @GET("data/$API_VERSION/weather")
     suspend fun getWeatherData(
             @Query(LATITUDE_PARAM) latitude: Double,
-            @Query(LONGITUDE_PARAM) longitude: Double
+            @Query(LONGITUDE_PARAM) longitude: Double,
+            @Query(UNITS_PARAM) units: String = UNITS_METRIC_VALUE
     ): Response<WeatherDataResponse>
 }

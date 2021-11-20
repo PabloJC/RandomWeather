@@ -4,4 +4,6 @@
     <string name="error_no_location_permission">You don\'t have location permission, please go Settings and enabled permissions</string>
     <string name="error_no_data_found">We don\'t have found data about this location</string>
     <string name="error_no_location">You don\'t have a location</string>
+    <string name="humidity">Humidity</string>
+    <string name="temperature">Temperature</string>
 </resources>

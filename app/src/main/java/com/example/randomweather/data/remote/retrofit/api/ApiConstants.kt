@@ -17,3 +17,7 @@ const val MIN_TEMPERATURE_PARAM = "tempMin"
 const val MAX_TEMPERATURE_PARAM = "temp_max"
 const val PRESSURE_PARAM = "pressure"
 const val HUMIDITY_PARAM = "humidity"
+const val UNITS_PARAM = "units"
+
+const val UNITS_METRIC_VALUE = "metric"
+
