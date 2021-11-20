@@ -61,8 +61,7 @@ allprojects {
                 jUnit          : 'junit:junit:4.13.2',
                 mockk          : "io.mockk:mockk:$mockk_version",
                 coroutineTests : 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2',
-                testShared     : project(':testShared'),
-                hiltTest: "com.google.dagger:hilt-android-testing:$hilt_version"
+                testShared     : project(':testShared')
         ]
 
         androidxTestLibs = [
