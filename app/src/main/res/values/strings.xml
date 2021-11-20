@@ -6,4 +6,5 @@
     <string name="error_no_location">You don\'t have a location</string>
     <string name="humidity">Humidity</string>
     <string name="temperature">Temperature</string>
+    <string name="fab_content_description">fab</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.randomweather.ui.map
+package com.example.randomweather
 
 import com.example.data.datasources.LocationInfoLocalDatasource
 import com.example.data.datasources.LocationInfoRemoteDatasource

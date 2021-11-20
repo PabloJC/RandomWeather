@@ -34,7 +34,7 @@ import javax.inject.Inject
 class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private var currentMarker: Marker? = null
-    private lateinit var map: GoogleMap
+    private var map: GoogleMap? = null
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<CardView>
     private lateinit var binding: ActivityMapsBinding
 
@@ -97,8 +97,8 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private fun moveToLocation(latLng: LatLng) {
         currentMarker?.remove()
-        currentMarker = map.addMarker(MarkerOptions().position(latLng))
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 11f))
+        currentMarker = map?.addMarker(MarkerOptions().position(latLng))
+        map?.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 11f))
     }
 
     private fun setCityName(name: String?, coordinates: Coordinates?) {
