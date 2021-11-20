@@ -13,15 +13,12 @@ import org.junit.After
 import org.junit.AfterClass
 import org.junit.Before
 import org.junit.Rule
-import org.junit.runner.RunWith
-import org.mockito.junit.MockitoJUnitRunner
 
 @ExperimentalCoroutinesApi
-@RunWith(MockitoJUnitRunner::class)
 abstract class BaseUnitTest {
 
     @get:Rule
-    val rule = InstantTaskExecutorRule()
+    val instantTaskRule = InstantTaskExecutorRule()
 
     protected val dispatcher: CoroutineDispatcher = Dispatchers.Unconfined
 

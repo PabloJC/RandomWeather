@@ -9,7 +9,6 @@ import com.example.domain.flatMap
 import com.example.domain.map
 import com.example.domain.models.Coordinates
 import com.example.domain.models.LocationInfo
-import kotlinx.coroutines.flow.MutableSharedFlow
 import javax.inject.Inject
 
 internal class LocationInfoRepositoryImpl @Inject constructor(
@@ -18,12 +17,10 @@ internal class LocationInfoRepositoryImpl @Inject constructor(
         private val locationProvider: LocationProvider,
 ) : LocationInfoRepository {
 
-    private val mutableLocationInfoFlow = MutableSharedFlow<LocationInfo>()
-
     override suspend fun getNewLocationInfo(): Either<DomainError, LocationInfo> {
         return getNewLocation().flatMap { newLocation ->
             remoteDatasource.getLocationInfo(newLocation).map { locationInfo ->
-                localDatasource.currentLocation = newLocation
+                localDatasource.currentCoordinates = newLocation
                 locationInfo
             }
         }
@@ -31,7 +28,7 @@ internal class LocationInfoRepositoryImpl @Inject constructor(
 
     private suspend fun getNewLocation(): Either<DomainError, Coordinates> {
         return with(locationProvider) {
-            localDatasource.currentLocation?.let { currentLocation ->
+            localDatasource.currentCoordinates?.let { currentLocation ->
                 getRandomLocation(currentLocation)
             } ?: getCurrentLocation()
         }

@@ -5,5 +5,5 @@ import com.example.domain.models.Coordinates
 import javax.inject.Inject
 
 class LocationInfoCachedDatasource @Inject constructor(): LocationInfoLocalDatasource{
-    override var currentLocation: Coordinates? = null
+    override var currentCoordinates: Coordinates? = null
 }
