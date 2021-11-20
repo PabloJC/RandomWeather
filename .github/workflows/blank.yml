@@ -1,0 +1,46 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Bitrise Job Runner
+      # You may pin to the exact commit or the version.
+      # uses: Open-Source-Contrib/bitrise-trigger-action@bfce211b5b35e029ef4caa76a78a4ba2c5fc2924
+        uses: Open-Source-Contrib/bitrise-trigger-action@1.0.4
+        with:
+          # Token for Bitrise
+          bitrise_ci_token: AbYzfkFmDViQigeu2wZFuA
+          # Slug of Bitrise project
+          bitrise_ci_slug: db9c59942de5566e 
+          # Commit hash from PR
+          git_commit_hash: $(git rev-parse --short "$GITHUB_SHA")
+          # Current branch of the PR
+          git_current_branch: ${GITHUB_REF#refs/heads/}
+          # Base branch of the PR
+          git_base_branch: $GITHUB_BASE_REF
+          # Workflow to trigger on Bitrise
+          bitrise_workflow_name: primary
+          # Pull request number
+          git_pr_number: $GITHUB_RUN_ID
