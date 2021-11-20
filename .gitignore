@@ -1,15 +1,59 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Git files
+*.orig
+
+# Java class files
+*.class
+
+# generated files
+bin/
+build/
+build-cache/
+gen/
+cobertura-results/
+contiperf-report/
+test_database
+test_database-journal
+doc/
+schemas/
+#test
+cobertura.ser
+
+# Local configuration file (sdk path, etc)
 local.properties
+
+# Eclipse project files
+.classpath
+.project
+.checkstyle
+.settings
+.externalToolBuilders
+
+# IDEA files
+.idea
+*.iml
+
+# Allow test projects Eclipse files (java configuration)
+!*Tests/.classpath
+!*Tests/.project
+
+#Mac Stuff
+.DS_Store
+
+#GAG
+.gag
+
+#Gradle directory
+.gradle
+
+#tmp directory
+tmp/
+
+# Android Studio layout inspection captures
+captures/
