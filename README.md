@@ -21,3 +21,12 @@ This a modularized App using Clean Architecture and a MVVM design pattern. The s
 We have created UnitTest in modules using Mockk and dependency injections using Dagger Hilt
 
 
+
+## Usage
+
+```
+# You need to add the MAPS_API_KEY in your local.properties file
+MAPS_API_KEY  = AIzaSyBYVTTCr1YibZQTqPmptnKSID1SeEND4c0
+```
+
+
