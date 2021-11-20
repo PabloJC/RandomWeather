@@ -48,7 +48,7 @@ class LocationInfoRepositoryImplTest {
             repository.getNewLocationInfo()
         }
         coVerify { localDatasource.currentCoordinates = mockCoordinates2 }
-        assertEquals(Either.Right(mockLocationInfo), result)
+        assertEquals(Either.Left(NoDataFound), result)
     }
 
     @Test
