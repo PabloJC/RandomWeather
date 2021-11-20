@@ -16,10 +16,11 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.example.randomweather.CustomTestRunner"
 
         buildConfigField "String", "API_ID", API_ID
         buildConfigField "String", "API_HOST", API_HOST
+        buildConfigField "String", "ICON_HOST", ICON_HOST
     }
 
     buildTypes {
@@ -52,5 +53,7 @@ dependencies {
     kapt androidKaptLibs.values()
 
     testImplementation testLibs.values()
+    testImplementation androidxTestLibs.values()
     androidTestImplementation androidTestLibs.values()
+    kaptAndroidTest androidKaptTestLibs.values()
 }

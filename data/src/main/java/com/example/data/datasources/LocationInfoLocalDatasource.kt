@@ -3,5 +3,5 @@ package com.example.data.datasources
 import com.example.domain.models.Coordinates
 
 interface LocationInfoLocalDatasource {
-    var currentLocation: Coordinates?
+    var currentCoordinates: Coordinates?
 }

@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/line_round_corners.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/activity_maps.xml" value="0.1734375" />
         <entry key="app/src/main/res/layout/bottom_sheet_dialog_layout.xml" value="0.1734375" />
+        <entry key="app/src/main/res/layout/weather_container_layout.xml" value="0.23854166666666668" />
       </map>
     </option>
   </component>

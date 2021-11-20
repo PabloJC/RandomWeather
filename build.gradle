@@ -1,11 +1,12 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext{
+    ext {
         kotlin_version = '1.5.31'
         retrofit_version = '2.9.0'
         play_services_version = '18.0.0'
         hilt_version = '2.38.1'
         lifecycle_version = '2.4.0'
+        mockk_version = '1.12.1'
     }
 
     repositories {
@@ -37,13 +38,13 @@ allprojects {
                 maps              : "com.google.android.gms:play-services-maps:$play_services_version",
                 location          : "com.google.android.gms:play-services-location:$play_services_version",
                 fragmenKtx        : 'androidx.fragment:fragment-ktx:1.4.0',
-                hilt                 : "com.google.dagger:hilt-android:$hilt_version"
+                hilt              : "com.google.dagger:hilt-android:$hilt_version",
+                gson              : "com.google.code.gson:gson:2.8.9"
         ]
 
         commonLibs = [
                 stdlib    : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
                 coroutines: 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2',
-                gson      : "com.google.code.gson:gson:2.8.9"
         ]
 
         androidKaptLibs = [
@@ -53,18 +54,33 @@ allprojects {
         libs = [
                 retrofit             : "com.squareup.retrofit2:retrofit:$retrofit_version",
                 retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:$retrofit_version",
+                coil                  : "io.coil-kt:coil:1.4.0"
         ]
 
         testLibs = [
-                jUnit        : 'junit:junit:4.13.2',
-                mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0",
+                jUnit          : 'junit:junit:4.13.2',
+                mockk          : "io.mockk:mockk:$mockk_version",
+                coroutineTests : 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2',
+                testShared     : project(':testShared'),
+                hiltTest: "com.google.dagger:hilt-android-testing:$hilt_version"
+        ]
+
+        androidxTestLibs = [
+                archCoreTesting: 'androidx.arch.core:core-testing:2.1.0',
         ]
 
         androidTestLibs = [
-                testRunner   : 'androidx.test:runner:1.4.0',
-                espresso     : 'androidx.test.espresso:espresso-core:3.4.0',
-                rules        : 'androidx.test:rules:1.4.0',
-                extJunit     : 'androidx.test.ext:junit:1.1.3',
+                testRunner  : 'androidx.test:runner:1.4.0',
+                espresso    : 'androidx.test.espresso:espresso-core:3.4.0',
+                rules       : 'androidx.test:rules:1.4.0',
+                extJunit    : 'androidx.test.ext:junit:1.1.3',
+                mockkAndroid: "io.mockk:mockk-android:$mockk_version",
+                hiltTesting : "com.google.dagger:hilt-android-testing:$hilt_version",
+                testShared     : project(':testShared')
+        ]
+
+        androidKaptTestLibs = [
+                hiltKapt : "com.google.dagger:hilt-android-compiler:$hilt_version"
         ]
     }
 }
