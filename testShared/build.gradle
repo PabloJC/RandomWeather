@@ -1,9 +1,14 @@
 plugins {
     id 'kotlin'
+    id 'kotlin-kapt'
 }
 
 dependencies {
     implementation project(":domain")
+    implementation project(":data")
+
+    implementation "com.google.dagger:hilt-core:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
     implementation commonLibs.values()
     testImplementation testLibs.values()
